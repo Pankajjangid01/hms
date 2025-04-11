@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="appointment_details_form" model="ir.ui.view">
+        <field name="name">appointment.details.form</field>
+        <field name="model">appointment.appointment</field>
+        <field name="arch" type="xml">
+            <form string="Appointment Form">
+                <header>
+                    <button name="action_open_invoice_wizard" type="object" string="Create Invoice" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <field name="appointment_id" style="font-weight:bold;font-size:30px"/><br/>
+                    <field name="patient_id" style="color:blue;margin-top:10px;margin-bottom:10px"/>
+                    <group>
+                        <group>
+                            <field name="physician" force_save="1"/>
+                            <field name="speciality" force_save="1"/>
+                            <field name="appointment_date"/>
+                            <field name="appointment_end"/>
+                            <field name="patient_status"/>
+                            <field name="invoice_exempt"/>
+                            <field name="appointment_status"/>
+                            <field name="validity_date"/>
+                        </group>
+                        <group>
+                            <field name="health_center_name" force_save="1"/>
+                            <field name="inpatient_registration" force_save="1"/>
+                            <field name="appointment_duration"/>
+                            <field name="urgency_level"/>
+                            <field name="invoice_to_insaurance"/>
+                            <field name="consulting_service"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Comments">
+                        </page>
+                    </notebook>
+                </sheet>
+                <Chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="appointment_details_list" model="ir.ui.view">
+        <field name="name">appointment.details.list</field>
+        <field name="model">appointment.appointment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="appointment_id"/>
+                <field name="patient_id"/>
+                <field name="patient_status"/>
+                <field name="urgency_level"/>
+                <field name="appointment_date"/>
+                <field name="appointment_end"/>
+                <field name="physician"/>
+                <field name="speciality"/>
+                <field name="health_center_name"/>
+            </list>
+        </field>
+    </record>
+    <record id="appointment_details_actions" model="ir.actions.act_window">
+        <field name="name">Appointment Data</field>
+        <field name="res_model">appointment.appointment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

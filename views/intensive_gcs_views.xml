@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="patient_gcs_form" model="ir.ui.view">
+        <field name="name">patient.gcs.form</field>
+        <field name="model">intensive.gcs</field>
+        <field name="arch" type="xml">
+            <form string='GCS Form'>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="registration_code"/>
+                            <field name="gec_eyes"/>
+                            <field name="gcs_motor"/>
+                        </group>
+                        <group>
+                            <field name="gcs_date"/>
+                            <field name="gcs_verbal"/>
+                            <field name="gcs_glasgow"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_gcs_list" model="ir.ui.view">
+        <field name="name">patient.gcs.list</field>
+        <field name="model">intensive.gcs</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="registration_code"/>
+                <field name="gec_eyes"/>
+                <field name="gcs_motor"/>
+                <field name="gcs_date"/>
+                <field name="gcs_verbal"/>
+                <field name="gcs_glasgow"/>
+            </list>
+        </field>
+    </record>
+    <record id="patient_gcs_actions" model="ir.actions.act_window">
+        <field name="name">Patient GCS Data</field>
+        <field name="res_model">intensive.gcs</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

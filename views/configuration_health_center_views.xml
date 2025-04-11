@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- health center building form -->
+    <record id="health_center_building_form" model="ir.ui.view">
+        <field name="name">health.center.building.form</field>
+        <field name="model">health.center.buildings</field>
+        <field name="arch" type="xml">
+            <form string="Health Center Buildings">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="building_institution"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- health center building list -->
+    <record id="health_center_buildings_list" model="ir.ui.view">
+        <field name="name">health.center.buildings.list</field>
+        <field name="model">health.center.buildings</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="building_institution"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- health center form -->
+    <record id="health_center_form" model="ir.ui.view">
+        <field name="name">health.center.form</field>
+        <field name="model">health.center</field>
+        <field name="arch" type="xml">
+            <form string="Health Center">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- health center list -->
+    <record id="health_center_list" model="ir.ui.view">
+        <field name="name">health.center.list</field>
+        <field name="model">health.center</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- health center units form -->
+    <record id="health_center_units_form" model="ir.ui.view">
+        <field name="name">health.center.units.form</field>
+        <field name="model">health.center.units</field>
+        <field name="arch" type="xml">
+            <form string="Health Center Units">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="institution"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- health center units list -->
+    <record id="health_center_units_list" model="ir.ui.view">
+        <field name="name">health.center.units.list</field>
+        <field name="model">health.center.units</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="institution"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- health center wards form -->
+    <record id="health_center_wards_form" model="ir.ui.view">
+        <field name="name">health.center.wards.form</field>
+        <field name="model">health.center.wards</field>
+        <field name="arch" type="xml">
+            <form string="Health Center Wards">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="no_of_wards"/>
+                        <field name="gender"/>
+                        <field name="institution"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- health center wards list -->
+    <record id="health_center_wards_list" model="ir.ui.view">
+        <field name="name">health.center.wards.list</field>
+        <field name="model">health.center.wards</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="no_of_wards"/>
+                <field name="gender"/>
+                <field name="institution"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- health center beds form -->
+    <record id="health_center_beds_form" model="ir.ui.view">
+        <field name="name">health.center.beds.form</field>
+        <field name="model">health.center.beds</field>
+        <field name="arch" type="xml">
+            <form string="Health Center Beds">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="ward_name"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- health center beds list -->
+    <record id="health_center_beds_list" model="ir.ui.view">
+        <field name="name">health.center.beds.list</field>
+        <field name="model">health.center.beds</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="ward_name"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- hospital openning rooms form -->
+    <record id="hospital_opening_rooms_form" model="ir.ui.view">
+        <field name="name">hospital.opening.rooms.form</field>
+        <field name="model">hospital.opening.rooms</field>
+        <field name="arch" type="xml">
+            <form string="Health Center Beds">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="institution"/>
+                        <field name="unit"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- hospital opening rooms list -->
+    <record id="hospital_opening_rooms_list" model="ir.ui.view">
+        <field name="name">hospital.opening.rooms.list</field>
+        <field name="model">hospital.opening.rooms</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="institution"/>
+                <field name="unit"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <record id="health_center_buildings_actions" model="ir.actions.act_window">
+        <field name="name">Health Center Buildings Data</field>
+        <field name="res_model">health.center.buildings</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="health_center_actions" model="ir.actions.act_window">
+        <field name="name">Health Center Data</field>
+        <field name="res_model">health.center</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="health_center_units_actions" model="ir.actions.act_window">
+        <field name="name">Health Center Units Data</field>
+        <field name="res_model">health.center.units</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="health_center_wards_actions" model="ir.actions.act_window">
+        <field name="name">Health Center wards Data</field>
+        <field name="res_model">health.center.wards</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="health_center_beds_actions" model="ir.actions.act_window">
+        <field name="name">Health Center Beds Data</field>
+        <field name="res_model">health.center.beds</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="hospital_opening_rooms_actions" model="ir.actions.act_window">
+        <field name="name">Hospital Opening Rooms Data</field>
+        <field name="res_model">hospital.opening.rooms</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

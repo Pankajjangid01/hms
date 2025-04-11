@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="prescription_data" name="Details">
+        <t t-call="web.html_container" style="border:1px solid black">
+            <div>
+                <header>
+                    <h1>Hospital Management</h1>
+                    <hr/>
+                    <div style="width:300px;">
+                        <p>Swai Man Singh</p>
+                        <p>(SMS)</p>
+                        <p>Jawahar Lal Nehru Marg</p>
+                        <p>Jaipur</p>
+                        <p>Rajasthan</p>
+                        <p>India</p>
+                        <hr/>
+                    </div>
+                </header>
+                <div style="margint-top:10%; padding-top:50px">
+                    <div>
+                        <h1 style="font-weight:bold;font-size:35px;text-align:center;">PRESCRIPTION INFORMATION</h1>
+                        <div style="position:relative;margin-top:50px">
+                            <t t-foreach="docs" t-as="record">
+                                <div style="position:absolute;left:5%">
+                                    <strong>Prescription ID:</strong>
+                                    <p t-field="record.prescription_id"/>
+                                </div>
+                                <div style="position:absolute;left:20%">
+                                    <strong>Prescription Date:</strong>
+                                    <p t-field="record.prescription_date"/>
+                                </div>
+                                <div style="position:absolute;left:42%">
+                                    <strong>Prescribing Doctor:</strong>
+                                    <p t-field="record.prescribing_doctor"/>
+                                </div>
+                                <div style="position:absolute;right:20%">
+                                    <strong>Pharmacy:</strong>
+                                    <p t-field="record.health_center_name"/>
+                                </div>
+                                <div style="position:absolute;right:0px">
+                                    <strong>Patient Information:</strong>
+                                    <p t-field="record.patient_id"/>
+                                </div>
+                                <div style="position:absolute;top:100px; width:100%">
+                                    <h1>Presciption Details</h1>
+                                    <hr/>
+                                    <div>
+                                        <strong>Quantity:</strong><span style="margin-left:15px" t-field="record.prescription_details_ids.medicine_quantity"/>
+                                    </div>
+                                    <hr/>
+                                    <div>
+                                        <strong>Medicament:</strong><span style="margin-left:15px" t-field="record.prescription_details_ids.medicine_name"/>
+                                    </div>
+                                    <hr/>
+                                    <div>
+                                        <strong>Start:</strong><span style="margin-left:15px" t-field="record.prescription_date"/>
+                                    </div>
+                                    <hr/>
+                                    <div>
+                                        <strong>Common Dosage:</strong><span style="margin-left:15px" t-field="record.prescription_details_ids.medince_frequency"/>
+                                    </div>
+                                    <hr/>
+                                    <div>
+                                        <strong>Frequency:</strong><span style="margin-left:15px" t-field="record.prescription_details_ids.medince_frequency"/>
+                                    </div>
+                                    <hr/>
+                                    <div>
+                                        <strong>Treatment:</strong><span style="margin-left:15px" t-field="record.prescription_details_ids.treatment_duration"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

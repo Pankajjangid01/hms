@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="paperformat_patient_reports" model="report.paperformat">
+        <field name="name">Patient Reports</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">332</field>
+        <field name="page_width">275</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="True"/>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+        <field name="disable_shrinking" eval="True"/>
+    </record>
+
+    <record id="paperformat_appointment_reports" model="report.paperformat">
+        <field name="name">Appointment Reports</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">332</field>
+        <field name="page_width">275</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="True"/>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+        <field name="disable_shrinking" eval="True"/>
+    </record>
+
+    <record id="paperformat_prescription_reports" model="report.paperformat">
+        <field name="name">Prescription Reports</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">332</field>
+        <field name="page_width">275</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="True"/>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+        <field name="disable_shrinking" eval="True"/>
+    </record>
+
+    <record id="paperformat_newborn_reports" model="report.paperformat">
+        <field name="name">New Born Baby Reports</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">332</field>
+        <field name="page_width">275</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="True"/>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+        <field name="disable_shrinking" eval="True"/>
+    </record>
+</odoo>

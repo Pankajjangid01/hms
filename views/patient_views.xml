@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="patient_details_form" model="ir.ui.view">
+        <field name="name">patient.details.form</field>
+        <field name="model">patient.patient</field>
+        <field name="arch" type="xml">
+            <form string="Patient Form">
+                <header>
+                    <button type="object" name="action_download_patient_data" class="btn-primary" style="border-radius:5px;padding:7px;background-color:#71639e;color: white;">
+                        Print Patient Card
+                    </button>
+                </header>
+                <sheet>
+                    <field name="patient_image" widget="image" options="{'size': [110, 110]}" style="box-shadow:1px 1px 1px 1px rgb(248, 244, 244);padding:5px"/>
+                    <field name="display_name" style="margin-left:20px;margin-top:-50px;font-weight:bold;font-size:35px"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="patient_date_of_birth"/>
+                            <field name="patient_maritial_status"/>
+                            <field name="barcode"/>
+                        </group>
+                        <group>
+                            <field name="patient_gender"/>
+                            <field name="patient_address"/>
+                            <field name="patient_age" force_save="1"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <h1 style="margin-top:30px">Patient Critical Information</h1>
+                    <notebook>
+                        <page string="General information">
+                            <notebook>
+                                <page string="Lab Tests">
+                                    <h1 style="margin-top:30px;margin-bottom:20px">Patient General Information</h1>
+                                    <group>
+                                        <group>
+                                            <field name="blood_type"/>
+                                            <field name="patient_ethnic_group"/>
+                                            <field name="insurances"/>
+                                        </group>
+                                        <group>
+                                            <field name="patient_rh"/>
+                                            <field name="family"/>
+                                            <field name="patient_receivable"/>
+                                            <field name="patient_primary_care_doctor_id"/>
+                                        </group>
+                                    </group>
+                                    <h1 style="margin-top:50px;mrgin-bottom:40px">Patient Extra Information</h1>
+                                    <group>
+                                        <field name="patient_deceased"/>
+                                    </group>
+                                </page>
+                                <page string="Medications">
+                                    <field name="medications_ids"/>
+                                </page>
+                                <page string="Vacination"></page>
+                            </notebook>
+                        </page>
+                        <page string="Diseases">
+                            <field name="disease_ids"/>
+                        </page>
+                        <page string="Evaluations">
+                            <field name="appointment_ids">
+                                <list editable="bottom">
+                                    <field name="appointment_id"/>
+                                    <field name="physician"/>
+                                    <field name="speciality"/>
+                                    <field name="health_center_name"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Surgeries">
+                            <field name="surgeries_ids">
+                                <list editable="bottom">
+                                    <field name="date_of_surgery"/>
+                                    <field name="procedure_description"/>
+                                    <field name="surgeon"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Genetic Risks"></page>
+                        <page string="Socioeconomics"></page>
+                        <page string="Lifestyle"></page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="patient_details_list" model="ir.ui.view">
+        <field name="name">patient.details.list</field>
+        <field name="model">patient.patient</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="patient_gender"/>
+                <field name="patient_date_of_birth"/>
+                <field name="patient_age" force_save="1"/>
+            </list>
+        </field>
+    </record>
+     <record id="patient_data_actions" model="ir.actions.act_window">
+        <field name="name">Patient Data</field>
+        <field name="res_model">patient.patient</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

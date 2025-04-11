@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="appointment_data" name="Details">
+        <t t-call="web.html_container" style="border:1px solid black">
+            <div>
+                <header>
+                    <h1>Hospital Management</h1>
+                    <hr/>
+                    <div style="width:300px;">
+                        <p>Swai Man Singh</p>
+                        <p>(SMS)</p>
+                        <p>Jawahar Lal Nehru Marg</p>
+                        <p>Jaipur</p>
+                        <p>Rajasthan</p>
+                        <p>India</p>
+                        <hr/>
+                    </div>
+                </header>
+                <div style="margint-top:10%; padding-top:50px">
+                    <div>
+                        <h1 style="font-weight:bold;font-size:35px;text-align:center;">APPOINTMENT IONFORMATION</h1>
+                        <div style="position:relative;margin-top:50px">
+                            <t t-foreach="docs" t-as="record">
+                                <div style="position:absolute;top:20px"> 
+                                    <div style="position:relative;margin-top:5px"><strong>Patient:</strong> <span style="position:margin-left:5px" t-field="record.patient_id"/></div>
+                                    <div style="position:relative;margin-top:5px"><strong>Consulting:</strong><span style="position:margin-left:5px" t-field="record.consulting_service"/></div>
+                                    <div style="position:relative;margin-top:5px"><strong>Instruction/Notes:</strong> <span style="position:margin-left:5px" t-field="record.appointment_status"/></div>
+                                </div>
+                                <div style="position:absolute;right:25px;top:25px">
+                                    <div style="position:relative;margin-top:5px"><strong style="margin-right:8px">Appointment:</strong> <span t-field="record.appointment_id"/></div>
+                                    <div style="position:relative;margin-top:5px"><strong style="margin-right:8px">Date:</strong> <span t-field="record.appointment_date"/></div>
+                                    <div style="position:relative;margin-top:5px"><strong style="margin-right:8px">Institution:</strong> <span t-field="record.health_center_name"/></div>
+                                    <div style="position:relative;margin-top:5px"><strong style="margin-right:8px">Speciality:</strong> <span t-field="record.speciality"/></div>
+                                    <div style="position:relative;margin-top:5px"><strong style="margin-right:8px">Health Proffessional:</strong> <span t-field="record.physician"/></div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="patient_ecg_form" model="ir.ui.view">
+        <field name="name">patient.ecg.form</field>
+        <field name="model">intensive.ecg</field>
+        <field name="arch" type="xml">
+            <form string='ECG Form'>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="registration_code"/>
+                            <field name="ecg_date"/>
+                            <field name="ecg_lead"/>
+                            <field name="ecg_axis"/>
+                            <field name="ecg_rate"/>
+                            <field name="ecg_pacemaker"/>
+                            <field name="ecg_rhythm"/>
+                        </group>
+                        <group>
+                            <field name="ecg_pr"/>
+                            <field name="ecg_qrs"/>
+                            <field name="ecg_qt"/>
+                            <field name="ecg_st_segment"/>
+                            <field name="ecg_wave_inversion"/>
+                            <field name="ecg_interpretation"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_ecg_list" model="ir.ui.view">
+        <field name="name">patient.ecg.list</field>
+        <field name="model">intensive.ecg</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="ecg_date"/>
+                <field name="registration_code"/>
+                <field name="ecg_lead"/>
+                <field name="ecg_axis"/>
+                <field name="ecg_rate"/>
+                <field name="ecg_pacemaker"/>
+                <field name="ecg_rhythm"/>
+                <field name="ecg_pr"/>
+                <field name="ecg_qrs"/>
+                <field name="ecg_qt"/>
+                <field name="ecg_st_segment"/>
+                <field name="ecg_wave_inversion"/>
+                <field name="ecg_interpretation"/>
+            </list>
+        </field>
+    </record>
+    <record id="patient_ecg_actions" model="ir.actions.act_window">
+        <field name="name">Patient ECG Data</field>
+        <field name="res_model">intensive.ecg</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

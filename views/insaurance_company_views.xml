@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="insaurance_company_form" model="ir.ui.view">
+        <field name="name">insaurance.company.form</field>
+        <field name="model">insaurance.company</field>
+        <field name="arch" type="xml">
+            <form string="Insaurance Company Form">
+                <sheet>
+                    <group>
+                        <field name="insaurance_name"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="insaurance_company_list" model="ir.ui.view">
+        <field name="name">insaurance.company.list</field>
+        <field name="model">insaurance.company</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="insaurance_name"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="insaurance_company_actions" model="ir.actions.act_window">
+        <field name="name">Insaurance Company Data</field>
+        <field name="res_model">insaurance.company</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

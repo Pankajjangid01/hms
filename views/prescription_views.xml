@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="prescription_details_form" model="ir.ui.view">
+        <field name="name">prescription.details.form</field>
+        <field name="model">prescription.prescription</field>
+        <field name="arch" type="xml">
+            <form string="Prescription Form">
+                <header>
+                    <button name="action_open_prescription_invoice_wizard" type="object" string="Create Invoice" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <h1 style="font-size:35px">Patient and Docter Information</h1>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="prescription_date"/>
+                            <field name="health_center_name" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="prescription_id"/>
+                            <field name="login_user"/>
+                            <field name="prescribing_doctor" force_save="1"/>
+                            <field name="invoice_to_insurance"/>
+                        </group>
+                    </group>
+                    <h1 style="margin-top:30px">Prescribing Detail</h1>
+                    <field name="prescription_details_ids">
+                        <list editable="bottom">
+                            <field name="print_medicine"/>
+                            <field name="medicament_name"/>
+                            <field name="medicine_dose"/>
+                            <field name="medicine_dose_units"/>
+                            <field name="medicine_from"/>
+                            <field name="medince_frequency"/>
+                            <field name="medicine_quantity"/>
+                            <field name="treatment_duration"/>
+                            <field name="treatment_period"/>
+                            <field name="allow_substituion"/>
+                            <field name="comment"/>
+                        </list>
+                    </field>
+                    
+                    <notebook>
+                        <page string="Notes">
+                        </page>
+                    </notebook>
+                </sheet>
+                <Chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="prescription_details_list" model="ir.ui.view">
+        <field name="name">prescription.details.list</field>
+        <field name="model">prescription.prescription</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="prescription_id"/>
+                <field name="patient_id"/>
+                <field name="prescribing_doctor"/>
+                <field name="health_center_name"/>
+                <field name="login_user"/>
+            </list>
+        </field>
+    </record>
+     <record id="prescription_details_actions" model="ir.actions.act_window">
+        <field name="name">Prescription Data</field>
+        <field name="res_model">prescription.prescription</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    
+</odoo>

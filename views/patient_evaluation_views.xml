@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="patient_evaluation_form" model="ir.ui.view">
+    <field name="name">patient.evaluation.form</field>
+        <field name="model">patient.evaluation</field>
+        <field name="arch" type="xml">
+            <form string="Patient Evaluation Form">
+                <sheet>
+                    <notebook>
+                        <page string="Main info">
+                            <group>
+                                <group>
+                                    <field name="patient_id"/>
+                                    <field name="start_evalutaion"/>
+                                    <field name="chief_comnplaint"/>
+                                </group>
+                                <group>
+                                    <field name="evaluation_type"/>
+                                    <field name="end_of_evaluation"/>
+                                    <field name="doctor"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Signs"/>
+                        <page string="Symptoms"/>
+                        <page string="Mental Status"/>
+                        <page string="Diagnosis"/>
+                    </notebook>
+                    <h1 style="margin-top:30px; margin-bottom:20px; color:rgb(67, 56, 221);font-size:35px">Evaluation Summary</h1>
+                    <hr/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_evaluation_list" model="ir.ui.view">
+        <field name="name">patient.evaluation.list</field>
+        <field name="model">patient.evaluation</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="patient_id"/>
+                <field name="end_of_evaluation"/>
+                <field name="start_evalutaion"/>
+                <field name="doctor"/>
+                <field name="chief_comnplaint"/>
+                <field name="body_mass_index"/>
+                <field name="systolic_pressure"/>
+                <field name="diastolic_pressure"/>
+                <field name="presumptive_diagnosis"/>
+                <field name="next_appointment"/>
+            </list>
+        </field>
+    </record>
+     <record id="patient_evaluation_actions" model="ir.actions.act_window">
+        <field name="name">Patient Evaluation Data</field>
+        <field name="res_model">patient.evaluation</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

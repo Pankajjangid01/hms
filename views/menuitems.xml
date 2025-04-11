@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="hospital_menuitems" name="Hospital" sequence="0"/>
+    <menuitem id="patient_data_menu_view" name="Patients" parent="hospital_menuitems" sequence="10"/>
+    <menuitem id="patient_details" name="Patients" parent="patient_data_menu_view" action="patient_data_actions"/>
+    <menuitem id="families_menuitem" name="Families" parent="patient_data_menu_view" action="patient_family_details_actions"/>
+    <menuitem id="prescription_menu" name="Prescription" parent="patient_data_menu_view" action="prescription_details_actions"/>
+
+    <menuitem id="appointment_menu" name="Appointments" parent="hospital_menuitems" sequence="11"/>
+    <menuitem id="appointment_submenu" name="Appointments" parent="appointment_menu" action="appointment_details_actions"/>
+
+    <menuitem id="administartion_menuitem" name="Inpatient Administration" parent="hospital_menuitems" sequence="12"/>
+    <menuitem id="hospitalization_menu" name="Patient Hopitalization" parent="administartion_menuitem" action="administration_details_actions"/>
+
+    <menuitem id="intensive_care_menu" name="Intesive Care" parent="administartion_menuitem" sequence="13"/>
+    <menuitem id="patient_icu_menu" name="Patient ICU Info" parent="intensive_care_menu" action="patient_icu_details_actions"/>
+    <menuitem id="patient_apache_score_menu" name="APACHE II Score" parent="intensive_care_menu" action="patient_apache_score_actions"/>
+    <menuitem id="patient_ecg_menu" name="ECG" parent="intensive_care_menu" action="patient_ecg_actions"/>
+    <menuitem id="patient_gce_menu" name="GCS" parent="intensive_care_menu" action="patient_gcs_actions"/>
+
+    <menuitem id="patient_pediatrics" name="Pediatrics" parent="hospital_menuitems" sequence="14"/>
+    <menuitem id="patient_pediatrics_symptomps" name="Pediatrics Symptomps" parent="patient_pediatrics" action="pediatrics_symptomps_actions"/>
+    <menuitem id="newborn_baby_menu" name="Newborn" parent="patient_pediatrics" action="newborn_baby_actions"/>
+
+    <menuitem id="laboratory_menu" name="Laboratory" parent="hospital_menuitems" sequence="15"/>
+    <menuitem id="lab_test_result_menu" name="Lab Test Result" parent="laboratory_menu" action="lab_test_info_actions"/>
+    <menuitem id="lab_results_menu" name="Lab Results" parent="laboratory_menu"/>
+    <menuitem id="lab_requests_menu" name="Draft Lab Requests" parent="lab_results_menu" action="draft_laboratory_test_actions"/>
+    <menuitem id="today_draft_lab_requests_menu" name="Today's Draft Lab Requests" parent="lab_results_menu" action="today_lab_request_actions"/>
+
+    <menuitem id="nursing_menu" name="Nursing" parent="hospital_menuitems" sequence="16"/>
+    <menuitem id="patient_ambulatory_care_menu" name="Patient Ammbulatory Care" parent="nursing_menu" action="patient_ambulatory_actions"/>
+
+    <menuitem id="surgery_menu" name="Surgery" parent="hospital_menuitems" sequence="17"/>
+    <menuitem id="patient_surgery_menu" name="Surgery Lists" parent="surgery_menu" action="patient_surgery_actions"/>
+    
+    <menuitem id="medical_menu" name="Medical Service" parent="hospital_menuitems" sequence="18"/>
+    <menuitem id="medical_service_menu" name="Medical Service" parent="medical_menu" action="medical_service_actions"/>
+
+    <menuitem id="reporting_menu" name="Reporting" parent="hospital_menuitems" sequence="19"/>
+    <menuitem id="medicament_list_menu" name="Medicament List" parent="reporting_menu" action="medicament_list_actions"/>
+    <menuitem id="patient_evaluation_menu" name="Patient Evaluation" parent="reporting_menu" action="patient_evaluation_actions"/>
+    <menuitem id="appointment_evaluation_menu" name="Appointment Evaluation Per Doctor" parent="reporting_menu" action="appointment_evaluation_actions"/>
+
+    <menuitem id="configuration_menu" name="Configuration" parent="hospital_menuitems" sequence="20"/>
+    <menuitem id="configuration_laboratory_menu" name="Laboratory" parent="configuration_menu" sequence="1"/>
+    <menuitem id="configuration_lab_test_menu" name="Lab Testing Units" parent="configuration_laboratory_menu" action="testing_units_actions"/>
+    <menuitem id="configuration_lab_test_type_menu" name="Lab Test Type" parent="configuration_laboratory_menu" action="test_type_actions"/>
+
+    <menuitem id="configuration_diseases_menu" name="Diseases" parent="configuration_menu" sequence="2"/>
+    <menuitem id="diseases_pathalogy_menu" name="Pathalogy Group" parent="configuration_diseases_menu" action="pathalogy_groups_actions"/>
+    <menuitem id="diseases_menu" name="Diseases" parent="configuration_diseases_menu" action="diseases_actions"/>
+
+    <menuitem id="configuration_categories_menu" parent="configuration_menu" name="Categories" sequence="3"/>
+    <menuitem id="disease_categories_structure_menu" parent="configuration_categories_menu" name="Disease Categories Structure" action="diseases_category_actions"/>
+    <menuitem id="disease_categories_menu" parent="configuration_categories_menu" name="Disease Categories" action="diseases_structure_actions"/>
+
+    <menuitem id="configuration_medical_procedure_menu" name="Medical Procedures" parent="configuration_menu" sequence="4"/>
+    <menuitem id="medical_procedure_menu" name="Medical Procedures" parent="configuration_medical_procedure_menu" action="medical_procedure_actions"/>
+
+    <menuitem id="configuration_health_center" parent="configuration_menu" name="Health Centers" sequence="5"/>
+    <menuitem id="health_center_building_menu" parent="configuration_health_center" name="Health Center Buildings" action="health_center_buildings_actions"/>
+    <menuitem id="health_center_menu" parent="configuration_health_center" name="Health Center" action="health_center_actions"/>
+    <menuitem id="health_center_units_menu" parent="configuration_health_center" name="Health Center units" action="health_center_units_actions"/>    
+    <menuitem id="health_center_wards_menu" parent="configuration_health_center" name="Health Center Wards" action="health_center_wards_actions"/>
+    <menuitem id="health_center_beds_menu" parent="configuration_health_center" name="Health Center Beds" action="health_center_beds_actions"/>
+    <menuitem id="hospital_opening_rooms_menu" parent="configuration_health_center" name="Hospital Operating Room" action="hospital_opening_rooms_actions"/>
+
+    <menuitem id="configuration_operational_areas" name="Operational Areas" parent="configuration_menu" sequence="6"/>
+    <menuitem id="operational_areas_menu" name="Operational Areas" parent="configuration_operational_areas" action="operational_areas_actions"/>
+    <menuitem id="operational_sector_menu" name="Operational Sector" parent="configuration_operational_areas" action="operational_sectors_actions"/>
+
+    <menuitem id="configuration_physician_menu" parent="configuration_menu" name="Physicians" sequence="7"/>
+    <menuitem id="physicians_menu" parent="configuration_physician_menu" name="Physicians" action="physician_actions"/>
+
+    <menuitem id="configuration_medicaments_menu" name="Medicaments" parent="configuration_menu" sequence="8"/>
+    <menuitem id="medicament_admin_menu" name="Medicament Administration Routes" parent="configuration_medicaments_menu" action="medicament_admin_actions"/>
+    <menuitem id="medicament_form_menu" name="Medicaments Form" parent="configuration_medicaments_menu" action="medicament_form_actions"/>
+    <menuitem id="medical_categories_menu" name="Medicaments categories Structure" parent="configuration_medicaments_menu" action="medicament_categories_actions"/>
+
+    <menuitem id="configuration_insaurance_menu" parent="configuration_menu" name="Insaurances" sequence="9"/>
+    <menuitem id="insaurance_company_menu" parent="configuration_insaurance_menu" name="Insaurance Company" action="insaurance_company_actions"/>
+    <menuitem id="insaurances_menu" parent="configuration_insaurance_menu" name="Insaurances" action="insaurance_actions"/>
+
+    <menuitem id="configuration_genetics_menu" parent="configuration_menu" name="Genetics" sequence="10"/>
+    <menuitem id="genetics_menu" parent="configuration_genetics_menu" name="Genetics" action="genetics_actions"/>
+
+    <menuitem id="configuration_misc_menu" name="Misc" parent="configuration_menu" sequence="11"/>
+    <menuitem id="medicament_misc_menu" name="Medicaments" parent="configuration_misc_menu" action="medicament_misc_actions"/>
+    <menuitem id="medical_speciality_menu" name="Medical Specialities" parent="configuration_misc_menu" action="medical_speciality_actions"/>
+    <menuitem id="medicament_units_menu" name="Medicament Units" parent="configuration_misc_menu" action="medicament_units_actions"/>
+    <menuitem id="occupation_menu" name="Occupations" parent="configuration_misc_menu" action="occupation_actions"/>
+    <menuitem id="ethnic_group_menu" name="Ethnnic Group" parent="configuration_misc_menu" action="ethnic_group_actions"/>
+    <menuitem id="recreational_drugs_menu" name="Recreational Drugs" parent="configuration_misc_menu" action="recreational_drugs_actions"/>
+
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Operationa areas form -->
+    <record id="operational_areas_form" model="ir.ui.view">
+        <field name="name">operational.areas.form</field>
+        <field name="model">operational.areas</field>
+        <field name="arch" type="xml">
+            <form string="Operational Areas">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- operational areas list -->
+    <record id="operational_areas_list" model="ir.ui.view">
+        <field name="name">operational.areas.list</field>
+        <field name="model">operational.areas</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Operationa sectors form -->
+    <record id="operational_sector_form" model="ir.ui.view">
+        <field name="name">operational.areas.form</field>
+        <field name="model">operational.sector</field>
+        <field name="arch" type="xml">
+            <form string="Operational Sectors">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="operation_area" force_save="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- operational sectors list -->
+    <record id="operational_sector_list" model="ir.ui.view">
+        <field name="name">operational.sector.list</field>
+        <field name="model">operational.sector</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="operation_area"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <record id="operational_areas_actions" model="ir.actions.act_window">
+        <field name="name">Operational Areas</field>
+        <field name="res_model">operational.areas</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="operational_sectors_actions" model="ir.actions.act_window">
+        <field name="name">Operational Sector</field>
+        <field name="res_model">operational.sector</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

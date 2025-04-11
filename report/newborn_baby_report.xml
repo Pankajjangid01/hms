@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="newborn_data" name="Details">
+        <t t-call="web.html_container" style="border:1px solid black">
+            <div>
+                <header>
+                    <h1>Hospital Management</h1>
+                    <hr/>
+                    <div style="width:300px;">
+                        <p>Swai Man Singh</p>
+                        <p>(SMS)</p>
+                        <p>Jawahar Lal Nehru Marg</p>
+                        <p>Jaipur</p>
+                        <p>Rajasthan</p>
+                        <p>India</p>
+                        <hr/>
+                    </div>
+                </header>
+                <div style="margint-top:50%; padding-top:50px;border:1px solid black">
+                    <t t-foreach="docs" t-as="record">
+                        <div style="border:0.5px solid black">
+                            <div style="width:50%;border:0.5px solid black">
+                                <div><strong>ID:<span t-field="record.new_born_baby_id"/></strong></div>
+                            </div>
+                            <div style="width:50%; margin-left:70%;margin-top:-20px;border:0.5px solid black">
+                                <div>Name:<strong><span t-field="record.baby_name"/></strong></div>
+                                <div>Father:<strong><span t-field="record.mother_name"/></strong></div>
+                                <div>Father's ID:<strong><span t-field="record.mother_name"/></strong></div>
+                                <div>DOB:<strong><span t-field="record.date_of_birth"/></strong></div>
+                            </div>
+                        </div>
+                        <div style="margin-top:5%">
+                            <div style="width:50%;">
+                                <div><strong>Gender:<span t-field="record.baby_gender"/></strong></div>
+                            </div>
+                            <div style="width:50%; margin-left:70%;margin-top:-20px">
+                                <div>Weight(gm):<strong><span t-field="record.baby_weight"/></strong></div>
+                                <div>Height(cm):<strong><span t-field="record.baby_length"/></strong></div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

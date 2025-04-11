@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="genetics_form" model="ir.ui.view">
+        <field name="name">genetics.form</field>
+        <field name="model">genetics.genetics</field>
+        <field name="arch" type="xml">
+            <form string="Genetics Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="official_long_name"/>
+                        <field name="affected_chromosome"/>
+                        <field name="dominance"/>
+                        <field name="location"/>
+                        <field name="information"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="genetics_list" model="ir.ui.view">
+        <field name="name">genetics.list</field>
+        <field name="model">genetics.genetics</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="official_long_name"/>
+                <field name="affected_chromosome"/>
+                <field name="dominance"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="genetics_actions" model="ir.actions.act_window">
+        <field name="name">Genetics Data</field>
+        <field name="res_model">genetics.genetics</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

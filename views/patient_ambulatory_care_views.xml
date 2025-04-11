@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="patient_ambulatory_care_form" model="ir.ui.view">
+    <field name="name">patient.ambulatory.care.form</field>
+        <field name="model">patient.ambulatory</field>
+        <field name="arch" type="xml">
+            <form string="Ambulatory Care Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="health_proffessional" force_save="1"/>
+                            <field name="base_condition"/>
+                            <field name="session"/>
+                            <field name="warning"/>
+                        </group>
+                        <group>
+                            <field name="ordering_physician" force_save="1"/>
+                            <field name="patient_id"/>
+                            <field name="related_evaluation" force_save="1"/>
+                            <field name="start_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Main">
+                            <field name="procedure_ids">
+                                <list>
+                                    <field name="procedure_code"/>
+                                    <field name="procedure_comments"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Other"/>
+                        <page string="Medication"/>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_ambulatory_care_list" model="ir.ui.view">
+        <field name="name">patient.ambulatory.care.list</field>
+        <field name="model">patient.ambulatory</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="warning"/>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="start_date"/>
+                <field name="health_proffessional"/>
+                <field name="session"/>
+            </list>
+        </field>
+    </record>
+     <record id="patient_ambulatory_actions" model="ir.actions.act_window">
+        <field name="name">Patient Ambulatory Care Data</field>
+        <field name="res_model">patient.ambulatory</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

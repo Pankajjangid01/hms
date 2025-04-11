@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="medicament_list" model="ir.ui.view">
+        <field name="name">medicament.list</field>
+        <field name="model">medicament.list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active_component"/>
+                <field name="category"/>
+                <field name="quantity_available"/>
+                <field name="therapeutic_effect"/>
+                <field name="pregnancy_warning"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+    <record id="medicament_list_actions" model="ir.actions.act_window">
+        <field name="name">Medicament List Data</field>
+        <field name="res_model">medicament.list</field>
+        <field name="view_mode">list</field>
+    </record>
+</odoo>

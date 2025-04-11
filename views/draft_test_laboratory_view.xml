@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="draft_laboratory_test_form" model="ir.ui.view">
+        <field name="name">draft.laboratory.test.form</field>
+        <field name="model">draft.laboratory</field>
+        <field name="arch" type="xml">
+            <form string='Draft Lab Request'>
+                <header>
+                    <button name="action_open_test_wizard" type="object" string="Create Lab Result" class="oe_highlight"/>
+                    <button name="action_open_lab_test_invoice_wizard" type="object" string="Create Invoice" class="btn-primary"/>
+                    <button name="action_generate_sale_order" type="object" string="Create Sale Order" class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,tested,cancel"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="request_id"/>
+                            <field name="test_type_name"/>
+                            <field name="test_date"/>
+                            <field name="invoice_to_insaurance"/>
+                        </group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="patient_doctor" force_save="True"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="draft_laboratory_test_list" model="ir.ui.view">
+        <field name="name">draft.laboratory.test.list</field>
+        <field name="model">draft.laboratory</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="request_id"/>
+                <field name="test_type_name"/>
+                <field name="test_date"/>
+                <field name="patient_id"/>
+            </list>
+        </field>
+    </record>
+    <record id="draft_laboratory_test_actions" model="ir.actions.act_window">
+        <field name="name">Draft Lab Test request Data</field>
+        <field name="res_model">draft.laboratory</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

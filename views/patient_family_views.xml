@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="patient_family_form" model="ir.ui.view">
+        <field name="name">patient.family.form</field>
+        <field name="model">patient.family</field>
+        <field name="arch" type="xml">
+            <form string="Patient Family Form">
+                <sheet>
+                    <group>
+                        <h1>General</h1>
+                        <field name="name_id"/>
+                        <field name="operational_sector"/>
+                    </group>
+                    <h2>Members</h2>
+                    <field name="members_ids">
+                        <list editable="bottom">
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_family_list" model="ir.ui.view">
+        <field name="name">patient.family.list</field>
+        <field name="model">patient.family</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name_id"/>
+                <field name="operational_sector"/>
+            </list>
+        </field>
+    </record>
+     <record id="patient_family_details_actions" model="ir.actions.act_window">
+        <field name="name">Family Data</field>
+        <field name="res_model">patient.family</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="pediatrics_symptomps_form" model="ir.ui.view">
+        <field name="name">pediatrics.symptoms.form</field>
+        <field name="model">pediatrics.pediatrics</field>
+        <field name="arch" type="xml">
+            <form string='Pedicatrics Symptoms Form'>
+                <sheet>
+                    <h1><field name="patient_id"/></h1>
+                    <h1 style="margin-top:30px;color:rgb(138, 59, 218);font-size:35px">General</h1>
+                    <group>
+                        <group>
+                            <field name="health_professional"/>
+                            <field name="pediatrics_symptomps_date"/>
+                        </group>
+                        <group>
+                            <field name="appointment_id"/>
+                            <field name="pcs_total"/>
+                        </group>
+                    </group>
+                    <h1 style="margin-top:50px;color:rgb(138, 59, 218);font-size:35px">Checklist</h1>
+                    <group>
+                        <group>
+                            <field name="symptomps_complain"/>
+                            <field name="spend_more_time_alone"/>
+                            <field name="patient_tires_easily"/>
+                            <field name="unable_to_sit_still"/>
+                            <field name="has_trouble_with_teacher"/>
+                            <field name="less_inerested_in_school"/>
+                            <field name="acts_as_driven_by_motor"/>
+                            <field name="daydreams_too_much"/>
+                        </group>
+                        <group>
+                            <field name="school_grades_dropping"/>
+                            <field name="is_down"/>
+                            <field name="visits_the_docter"/>
+                            <field name="has_trouble_sleeping"/>
+                            <field name="worries_alote"/>
+                            <field name="wants_to_be_with_you"/>
+                            <field name="feels_bad"/>
+                            <field name="takes_unnescessary_risks"/>
+                            <field name="get_hurts_often"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pediatrics_symptomps_list" model="ir.ui.view">
+        <field name="name">pediatrics.symptoms.list</field>
+        <field name="model">pediatrics.pediatrics</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="patient_id"/>
+                <field name="health_professional"/>
+                <field name="pediatrics_symptomps_date"/>
+                <field name="appointment_id"/>
+                <field name="pcs_total"/>
+            </list>
+        </field>
+    </record>
+    <record id="pediatrics_symptomps_actions" model="ir.actions.act_window">
+        <field name="name">Pediatrics Symptoms Data</field>
+        <field name="res_model">pediatrics.pediatrics</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

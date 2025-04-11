@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <record id="action_report_patient_data" model="ir.actions.report">
+        <field name="name">Patient Report</field>
+        <field name="model">patient.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hospital_management.patient_data</field>
+        <field name="report_file">hospital_management.patient_data</field>
+        <field name="binding_model_id" ref="hospital_management.model_patient_patient"/>
+        <field name="paperformat_id" ref="hospital_management.paperformat_patient_reports"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_appointment_data" model="ir.actions.report">
+        <field name="name">Appointment Report</field>
+        <field name="model">appointment.appointment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hospital_management.appointment_data</field>
+        <field name="report_file">hospital_management.appointment_data</field>
+        <field name="binding_model_id" ref="hospital_management.model_appointment_appointment"/>
+        <field name="paperformat_id" ref="hospital_management.paperformat_appointment_reports"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_prescription_data" model="ir.actions.report">
+        <field name="name">Prescription Report</field>
+        <field name="model">prescription.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hospital_management.prescription_data</field>
+        <field name="report_file">hospital_management.prescription_data</field>
+        <field name="binding_model_id" ref="hospital_management.model_prescription_prescription"/>
+        <field name="paperformat_id" ref="hospital_management.paperformat_prescription_reports"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_newborn_data" model="ir.actions.report">
+        <field name="name">New Born Baby Report</field>
+        <field name="model">newborn.baby</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hospital_management.newborn_data</field>
+        <field name="report_file">hospital_management.newborn_data</field>
+        <field name="binding_model_id" ref="hospital_management.model_newborn_baby"/>
+        <field name="paperformat_id" ref="hospital_management.paperformat_newborn_reports"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

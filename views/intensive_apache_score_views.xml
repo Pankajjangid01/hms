@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="patient_apache_score_form" model="ir.ui.view">
+        <field name="name">patient.apache.score.form</field>
+        <field name="model">intensive.apache</field>
+        <field name="arch" type="xml">
+            <form string='Apache Score Form'>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="registration_code"/>
+                            <field name="apache_age"/>
+                        </group>
+                        <group>
+                            <field name="apache_date"/>
+                        </group>
+                    </group>
+                    <h1 style="margin-top:15px;margin-bottom:15px">Physiological</h1>
+                    <group>
+                        <group>
+                            <field name="apache_temprature"/>
+                            <field name="apache_heart_rate"/>
+                            <field name="apache_flo"/>
+                            <field name="apache_paco"/>
+                            <field name="apache_ph"/>
+                            <field name="apache_potassium"/>
+                            <field name="apache_hematcocrit"/>
+                            <field name="apache_arf"/>
+                        </group>
+                        <group>
+                            <field name="apache_map"/>
+                            <field name="apache_respiratory_rate"/>
+                            <field name="apache_pao"/>
+                            <field name="apache_a_do"/>
+                            <field name="apache_Sodium"/>
+                            <field name="apache_creatinie"/>
+                            <field name="apache_wbc"/>
+                        </group>
+                    </group>
+                    <h1 style="margin-top:15px;margin-bottom:15px">Chronic</h1>
+                    <group>
+                        <field name="apache_choronic_condition"/>
+                        <field name="apache_score"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_apache_score_list" model="ir.ui.view">
+        <field name="name">patient.apache.score.list</field>
+        <field name="model">intensive.apache</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="registration_code"/>
+                <field name="apache_date"/>
+                <field name="apache_score"/>
+            </list>
+        </field>
+    </record>
+    <record id="patient_apache_score_actions" model="ir.actions.act_window">
+        <field name="name">Patient Apache Score Data</field>
+        <field name="res_model">intensive.apache</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
